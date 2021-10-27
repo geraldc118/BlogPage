@@ -26,6 +26,7 @@ The code was easy to write and the backend use of mongoDb was easy to use.
 
 # Future Features + Key Learnings
 -Add buttons to compose on the front screen
--Change the design of the site using css. 
+-Upgrade the design of the site using css. 
 -Add ability to add videos and pictures.
+-Add timestamps.
 
