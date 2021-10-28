@@ -4,7 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
-const dotenv = require("dotenv")
+const dotenv = require("dotenv");
 
 dotenv.config()
 
@@ -80,6 +80,6 @@ app.get("/contact", function(req, res){
 });
 
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log("Server started on port 3000");
+app.listen(process.env.PORT || 3001, function() {
+  console.log("Server started on port 3001");
 });
