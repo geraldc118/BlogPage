@@ -9,7 +9,7 @@ const dotenv = require("dotenv");
 dotenv.config()
 
 const homeStartingContent = "Hi my name is Gerald & Welcome to my coding journal/blog. This is something that i created as a early project in my coding journey and i have the plan to use this as a reference tool to look back on and possibly help others with the same problem. I have an interest in crypto and future technologies, so i will post about some of these things too, its all coding related right 🤷🏾‍♂️. ";
-const aboutContent = "I started this blog ";
+const aboutContent = "I started this blog at the beginning of my career change from coaching gymnastics.";
 const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rhoncus urna neque viverra justo nec ultrices. Arcu dui vivamus arcu felis bibendum. Consectetur adipiscing elit duis tristique. Risus viverra adipiscing at in tellus integer feugiat. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Consequat interdum varius sit amet mattis. Iaculis nunc sed augue lacus. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Pulvinar elementum integer enim neque. Ultrices gravida dictum fusce ut placerat orci nulla. Mauris in aliquam sem fringilla ut morbi tincidunt. Tortor posuere ac ut consequat semper viverra nam libero.";
 
 const app = express();
@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb+srv://' + process.env.DB_USERNAME + ':' + process.env.DB_PASSWORD + '@blogdb.qpwlc.mongodb.net/blogDB', {useNewUrlParser: true}, { useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://Admin-Gerald:WhatistheHypem8@blogdb.qpwlc.mongodb.net/BlogDB?retryWrites=true&w=majority", {useNewUrlParser: true}, { useUnifiedTopology: true });
 
 
 
@@ -80,6 +80,6 @@ app.get("/contact", function(req, res){
 });
 
 
-app.listen(process.env.PORT || 3001, function() {
-  console.log("Server started on port 3001");
+app.listen(process.env.PORT || 3000, function() {
+  console.log("Server started on port 3000");
 });
