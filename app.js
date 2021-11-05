@@ -4,13 +4,13 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
-const dotenv = require("dotenv");
+const encrypt = require('mongoose-encryption');
 
-dotenv.config()
+require('dotenv').config();
 
 const homeStartingContent = "Hi my name is Gerald & Welcome to my coding journal/blog. This is something that i created as a early project in my coding journey and i have the plan to use this as a reference tool to look back on and possibly help others with the same problem. I have an interest in crypto and future technologies, so i will post about some of these things too, its all coding related right 🤷🏾‍♂️. ";
-const aboutContent = "I started this blog at the beginning of my career change from coaching gymnastics.";
-const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rhoncus urna neque viverra justo nec ultrices. Arcu dui vivamus arcu felis bibendum. Consectetur adipiscing elit duis tristique. Risus viverra adipiscing at in tellus integer feugiat. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Consequat interdum varius sit amet mattis. Iaculis nunc sed augue lacus. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Pulvinar elementum integer enim neque. Ultrices gravida dictum fusce ut placerat orci nulla. Mauris in aliquam sem fringilla ut morbi tincidunt. Tortor posuere ac ut consequat semper viverra nam libero.";
+const aboutContent = "I started this blog at the beginning of my career change from coaching gymnastics.It was recommended as a great way to keep track of my progress.";
+const contactContent = "Email: Gerald Cameron118@gmail.com   Github: www.github.com/geraldc118";
 
 const app = express();
 
@@ -19,14 +19,13 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://Admin-Gerald:WhatistheHypem8@blogdb.qpwlc.mongodb.net/BlogDB", {useNewUrlParser: true}, { useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://Admin-Gerald:WhatistheHYpem8@blogdb.qpwlc.mongodb.net/BlogDB?retryWrites=true&w=majority");
 
 
-
-const postSchema = {
+const postSchema = new mongoose.Schema({
   title: String,
   content: String
-};
+});
 
 const Post = mongoose.model("Post", postSchema);
 
