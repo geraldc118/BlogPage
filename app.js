@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://DB_USERNAME:{DB_PASSWORD}@blogdb.qpwlc.mongodb.net/BlogDB?retryWrites=true&w=majority");
+mongoose.connect(process.env.MONGODB_URI);
 
 
 const postSchema = new mongoose.Schema({
