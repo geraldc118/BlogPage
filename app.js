@@ -27,7 +27,7 @@ const postSchema = new mongoose.Schema({
   content: String
 });
 
-const Post = mongoose.model("Post", postSchema);
+const Post = new mongoose.model("Post", postSchema);
 
 app.get("/", function(req, res){
 
