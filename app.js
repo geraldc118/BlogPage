@@ -4,9 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
-
-
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 const homeStartingContent = "Hi my name is Gerald & Welcome to my coding journal/blog. This is something that i created as a early project in my coding journey and i have the plan to use this as a reference tool to look back on and possibly help others with the same problem. I have an interest in crypto and future technologies, so i will post about some of these things too, its all coding related right 🤷🏾‍♂️. ";
 const aboutContent = "I started this blog at the beginning of my career change from coaching gymnastics.It was recommended as a great way to keep track of my progress.";
@@ -19,7 +17,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://Admin-Gerald:WhatistheHypem8@blogdb.qpwlc.mongodb.net/blogDB",{useNewUrlParser: true, useUnifiedTopology: true});
 
 
 const postSchema = new mongoose.Schema({
@@ -27,7 +25,7 @@ const postSchema = new mongoose.Schema({
   content: String
 });
 
-const Post = new mongoose.model("Post", postSchema);
+const Post = mongoose.model("Post", postSchema);
 
 app.get("/", function(req, res){
 
@@ -82,3 +80,4 @@ app.get("/contact", function(req, res){
 app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
+
