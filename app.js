@@ -6,9 +6,9 @@ const ejs = require("ejs");
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 
-const homeStartingContent = "Hi my name is Gerald & Welcome to my coding journal/blog. This is something that i created as a early project in my coding journey and i have the plan to use this as a reference tool to look back on and possibly help others with the same problem. I have an interest in crypto and future technologies, so i will post about some of these things too, its all coding related right 🤷🏾‍♂️. ";
+const homeStartingContent = "Hi my name is Gerald & welcome to my coding blog. This is something that i created as a early project in my coding journey and plan to use this as a reference tool to look back on and possibly help others with the same problem.";
 const aboutContent = "I started this blog at the beginning of my career change from coaching gymnastics.It was recommended as a great way to keep track of my progress.";
-const contactContent = "Email: Gerald Cameron118@gmail.com   Github: www.github.com/geraldc118";
+const contactContent = "Email: GeraldCameron118@gmail.com   Github: www.github.com/geraldc118";
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://Admin-Gerald:WhatistheHypem8@blogdb.qpwlc.mongodb.net/blogDB",{useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: true});
 
 
 const postSchema = new mongoose.Schema({
@@ -78,6 +78,6 @@ app.get("/contact", function(req, res){
 
 
 app.listen(process.env.PORT || 3000, function() {
-  console.log("Server started on port 3000");
+  console.log("Server started on server succesfully");
 });
 

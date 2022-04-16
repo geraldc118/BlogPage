@@ -20,6 +20,17 @@ html {
     color: #1abc9c !important;
 }
 
+.content{
+  border: #1abc9c solid 2px;
+  border-radius: 5px;
+  background-color: rgb(245, 239, 239);
+   
+}
+
+.contentContainer{
+  padding: 1em
+}
+
 .footer-padding {
 	padding-bottom: 60px;
 }
