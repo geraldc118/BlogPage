@@ -6,7 +6,7 @@ const ejs = require("ejs");
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 
-const homeStartingContent = "Hi my name is Gerald & welcome to my coding blog. This is something that i created as a early project in my coding journey and plan to use this as a reference tool to look back on and possibly help others with the same problem.";
+const homeStartingContent = "Hi my name is Gerald & welcome to my coding blog. This is something that i created as a early project in my coding journey and plan to use this as a reference tool to look back on and possibly help others with the same problem. I have an interest in crypto and future technologies. ";
 const aboutContent = "I started this blog at the beginning of my career change from coaching gymnastics.It was recommended as a great way to keep track of my progress.";
 const contactContent = "Email: GeraldCameron118@gmail.com   Github: www.github.com/geraldc118";
 
